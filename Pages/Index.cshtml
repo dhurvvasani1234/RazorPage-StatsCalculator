@@ -1,0 +1,185 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Statistics</h1>
+    <p>
+        Enter one, two or three numerical numbers and click Calculate button to get their statistics
+    </p>
+
+    <div class="container">
+        <form method="post">
+            @*row*@
+            <div class="row">
+                <div class="col-2">
+                </div>
+                <div class="col-2 text-right">
+                    <label for="inputFirstNumber" class="form-label">First Number</label>
+                </div>
+
+                <div class="col-2">
+                    <input type="text" name="inputFirstNumber" class="form-control" />
+                </div>
+                <div class="col-6"></div>
+            </div>
+
+            @*row*@
+            <div class="row">
+                <div class="col-2">
+                </div>
+                <div class="col-2 text-right">
+                    <label for="inputSecondNumber" class="form-label">Second Number</label>
+                </div>
+
+                <div class="col-2">
+                    <input type="text" name="inputSecondNumber" class="form-control" />
+                </div>
+                <div class="col-6"></div>
+            </div>
+
+            @*row*@
+            <div class="row">
+                <div class="col-2">
+                </div>
+                <div class="col-2 text-right">
+                    <label for="inputThirdNumber" class="form-label">Third Number</label>
+                </div>
+
+                <div class="col-2">
+                    <input type="text" name="inputThirdNumber" class="form-control" />
+                </div>
+                <div class="col-6"></div>
+            </div>
+
+            @*buttons*@
+            <div class="row">
+                <div class="col-4">
+                </div>
+
+                <div class="col-2 text-left">
+                    <!-- <button type="button" class="btn btn-primary">Calculate</button> -->
+                    <input type="submit" class="btn btn-primary" value="Calculate" />
+                </div>
+                <div class="col-6"></div>
+            </div>
+            <!-- button-row -->
+        </form>
+
+    </div>
+
+    @{
+        string Success = ViewData["Success"] as string;
+
+        @if (String.Compare(Success, "Values") == 0)
+        {
+            <!-- result-container -->
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <p>
+                            <b>
+                                You entered @($"{Model.Counter}") numbers. The following are the statistics
+                            </b>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- row-1 -->
+            <div class="row">
+                    <div class="col-2">
+                    </div>
+                    <div class="col-2 text-right">
+                        <label class="form-label">Maximum</label>
+                    </div>
+
+                    <div class="col-8 text-left">
+                        <label class="form-label">
+                            <b>@($"{Model.Maximum}")</b>
+                        </label>
+                    </div>
+                </div>
+                <!-- row-1 -->
+                <!-- row-2 -->
+            <div class="row">
+                    <div class="col-2">
+                    </div>
+                    <div class="col-2 text-right">
+                        <label class="form-label">Minimum</label>
+                    </div>
+
+                    <div class="col-8 text-left">
+                        <label class="form-label">
+                            <b>@($"{Model.Minimum}")</b>
+                        </label>
+                    </div>
+                </div>
+                <!-- row-2 -->
+                <!-- row-3 -->
+            <div class="row">
+                    <div class="col-2">
+                    </div>
+                    <div class="col-2 text-right">
+                        <label class="form-label">Total</label>
+                    </div>
+
+                    <div class="col-8 text-left">
+                        <label class="form-label">
+                            <b>@($"{Model.Total}")</b>
+                        </label>
+                    </div>
+                </div>
+                <!-- row-3 -->
+                <!-- row-4 -->
+            <div class="row">
+                    <div class="col-2">
+                    </div>
+                    <div class="col-2 text-right">
+                        <label class="form-label">Average</label>
+                    </div>
+
+                    <div class="col-8 text-left">
+                        <label class="form-label">
+                            <b>@($"{Model.Average}")</b>
+                        </label>
+                    </div>
+                </div>
+                <!-- row-4 -->
+        </div>
+            <!-- result-container -->
+
+        }
+        else if(String.Compare(Success, "noValues") == 0) {
+              <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <p>
+                            <b>
+                                You did not enter any number, no statistics were calculated!
+
+                            </b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <p>
+                            <b>
+                                You did not enter any number, no statistics were calculated!
+
+                            </b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>

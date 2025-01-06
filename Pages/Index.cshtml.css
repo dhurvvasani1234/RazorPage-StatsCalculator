@@ -1,0 +1,15 @@
+﻿.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.form-label {
+    margin-bottom: 0;
+}
+
+.row {
+    margin-bottom: 1.2rem;
+}
