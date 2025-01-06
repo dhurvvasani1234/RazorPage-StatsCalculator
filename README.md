@@ -1,6 +1,6 @@
 # RazorPage-StatsCalculator
 RazorPage calculator dotnet csharp level 3 lab 1 
-# Lab 1 - ASP.NET Razor Page: Statistics Calculator
+# ASP.NET Razor Page: Statistics Calculator
 
 This project is a simple **ASP.NET Razor Page**. The application calculates and displays basic statistics for up to three numerical inputs provided by the user.
 
